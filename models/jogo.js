@@ -10,7 +10,7 @@ const jogoSchema = new mongoose.Schema({
         require: true
     },
     classInd:{
-        type: Number,
+        type: String,
         require: true
     }
 });

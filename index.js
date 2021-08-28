@@ -65,8 +65,13 @@ app.put("/jogos/:id", async (req, res) => {
 });
 
 app.delete("/jogos/:id", async (req, res) => {
-    
-})
+    const id = req.params.id;
+    idValido(id);
+    const jogo = await JogoSchema.findById(id);
+    encontrarJogo(jogo);
+    await JogoSchema.findByIdAndDelete(id);
+    res.send({ jogo });
+});
 
 app.listen(port, () =>
     console.log(`Servidor rodando em http://localhost:${port}`)
