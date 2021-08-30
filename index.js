@@ -17,7 +17,7 @@ const idValido = id => {
 // função que verifica se o documento(objeto) do DB foi encontrado
 const encontrarJogo = jogo => {
     if (!jogo) {
-        resizeBy.status(404).send({ error: "Jogo não encontrado!"});
+        res.status(404).send({ error: "Jogo não encontrado!"});
     };
 };
 
