@@ -1,7 +1,6 @@
 const express = require("express");
 const JogoSchema = require("./models/Jogo");
 const mongoose = require("./database");
-const { addAbortSignal } = require("stream");
 
 const app = express();
 const port = 3000;
@@ -10,7 +9,7 @@ app.use(express.json());
 // função que verifica a validade de um id que vem da req
 const idValido = id => {
     if (!mongoose.Types.ObjectId.isValid(id)) {
-        resizeBy.status(422).send({ error: "Id Inválido!"});
+        res.status(422).send({ error: "Id Inválido!"});
     };
 };
 
